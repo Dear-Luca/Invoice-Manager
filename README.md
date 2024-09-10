@@ -8,6 +8,11 @@ This web application addresses a limitation in the [Fatture in Cloud](https://ww
 git clone https://github.com/Dear-Luca/Invoice-Manager.git
 cd Invoice-Manager
 ```
+### Install dependencies
+```bash
+pip3 install -r requirements.txt
+```
+
 
 ### Database & Docker Setup
 This project uses **MariaDB** as the database, which runs inside a **Docker container**.
