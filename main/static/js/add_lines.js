@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById("addModalLines");
     var btn = document.querySelector(".add-line-button");
-    var span = document.getElementsByClassName("close")[0];
+    var closeButton = modal.querySelector(".close");
 
     btn.onclick = function() {
         modal.style.display = "block";
     }
 
-    span.onclick = function() {
+    closeButton.onclick = function() {
         modal.style.display = "none";
     }
 

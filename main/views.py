@@ -76,7 +76,6 @@ def edit_invoice(request):
         id_code = request.POST.get('id_code')
         invoices_type = request.POST.get('invoices_type')
         description = request.POST.get('description')
-        date_str = request.POST.get('date')
         amount_net = request.POST.get('amount_net')
         amount_vat = request.POST.get('amount_vat')
         amount_gross = request.POST.get('amount_gross')
@@ -87,8 +86,6 @@ def edit_invoice(request):
             invoice = Invoices.objects.get(id_code=id_code)
             invoice.invoices_type = invoices_type
             invoice.description = description
-            date = parse_date(date_str)
-            invoice.date = date
             invoice.amount_net = amount_net
             invoice.amount_vat = amount_vat
             invoice.amount_gross = amount_gross

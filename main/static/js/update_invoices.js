@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById("editModalInvoices");
     var btn = document.querySelector(".edit-button");
-    var span = document.getElementsByClassName("close")[0];
+    var closeButton = modal.querySelector(".close");
 
     btn.onclick = function() {
         modal.style.display = "block";
     }
 
-    span.onclick = function() {
+    closeButton.onclick = function() {
         modal.style.display = "none";
     }
 
