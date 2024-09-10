@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Suppliers Page
+{% endblock title %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/search.css' %} ">
+{% endblock extrahead %}
+
+{% block main_content %}
+<h1>Search for Supplier</h1>
+
+<form method="GET" action="">
+    <input type="text" name="supplier_id_code" placeholder="Enter Supplier ID Code">
+    <input type="text" name="supplier_name" placeholder="Enter Supplier Name">
+    <button type="submit">Search</button>
+</form>
+
+<div id="result" class="search">
+    {% if suppliers %}
+    <h2>Invoice Results</h2>
+    <ul>
+        {% for supplier in suppliers %}
+        <li class="items-result">
+            <p><strong>Supplier ID Code:</strong> <a href="{% url 'details_supplier' supplier.id_code %}">{{ supplier.id_code}}</a></p>
+            <p><strong>Name:</strong> {{ supplier.name }}</p>
+            <p><strong>Address City:</strong> {{ supplier.address_city }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% elif error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+</div>
+{% endblock main_content %}

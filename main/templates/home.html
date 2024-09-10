@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock title %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock extrahead %}
+
+{% block main_content %}
+<div class="welcome-section">
+    <h1>Welcome to Invoice Management App</h1>
+    <p>This software solves a limitation in the 'Fatture in Cloud' platform by allowing you to include several categories, contracts and cost centres for each invoices.</p>
+    <a class="cta-button" href="/invoice">Start Managing Invoices</a>
+</div>
+
+<div class="features-section">
+    <h2>Key Features</h2>
+    <div class="features">
+        <div class="feature-card">
+            <h3>Multiple Invoice Lines</h3>
+            <p>Easily add, edit and manage multiple invoice lines with just a few clicks.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Comprehensive Management</h3>
+            <p>Track and manage your invoices effectively, all in one place.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Supplier Integration</h3>
+            <p>Seamlessly integrate supplier information to streamline your workflow.</p>
+        </div>
+    </div>
+</div>
+{% endblock main_content %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Invoices Page
+{% endblock title %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/search.css' %}" />
+{% endblock extrahead %}
+
+{% block main_content %}
+<h1>Search for Invoice</h1>
+
+<form method="GET" action="">
+    <input type="text" name="invoice_id_code" placeholder="Enter Invoice ID Code">
+    <input type="text" name="supplier_name" placeholder="Enter Supplier Name">
+    <button type="submit">Search</button>
+</form>
+
+<div id="result" class="search">
+    {% if invoices %}
+    <h2>Invoice Results</h2>
+    <ul>
+        {% for invoice in invoices %}
+        <li class="items-result">
+            <p><strong>Invoice ID Code:</strong> <a href="{% url 'details_invoice' invoice.id_code %}">{{ invoice.id_code}}</a></p>
+            <p><strong>Supplier Name:</strong> {{ invoice.supplier_name }}</p>
+            <p><strong>Date:</strong> {{ invoice.date }}</p>
+            <p><strong>Description:</strong> {{ invoice.description }}</p>
+            <p><strong>Net Amount:</strong> {{ invoice.amount_net }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% elif error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+</div>
+{% endblock main_content %}

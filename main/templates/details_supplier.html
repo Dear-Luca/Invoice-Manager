@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Detais Page
+{% endblock title %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/details.css' %}" />
+{% endblock extrahead %}
+
+{% block main_content %}
+<div class="container">
+    <h1>Supplier Details</h1>
+    
+    <p><strong>ID Code:</strong> {{ supplier.id_code }}</p>
+    <p><strong>Name:</strong> {{ supplier.name }}</p>
+    <p><strong>Code:</strong> {{ supplier.code }}</p>
+    <p><strong>Vat number:</strong> {{ supplier.vat_number }}</p>
+    <p><strong>Tax code:</strong> {{ supplier.tax_code }}</p>
+    <p><strong>Address city:</strong> {{ supplier.address_city }}</p>
+    <p><strong>Address province:</strong> {{ supplier.address_province }}</p>
+    <p><strong>Country:</strong> {{ supplier.country }}</p>
+</div>
+{% endblock main_content %}

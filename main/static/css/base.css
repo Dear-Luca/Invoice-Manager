@@ -1,0 +1,41 @@
+/* base.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50; 
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white; 
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.nav-menu a:hover {
+    background-color: #45a049; 
+}
+
+p {
+    margin: 10px;
+}
