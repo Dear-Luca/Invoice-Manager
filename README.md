@@ -55,7 +55,7 @@ python3 manage.py migrate
 ```
 Populate the database:
 ```bash
-python3 manage.py pupulate_db
+python3 manage.py populate_db
 ```
 
 ### Run django server
